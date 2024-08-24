@@ -1,7 +1,7 @@
 .frame {
   position: relative;
-  width: 300px; /* initial size */
-  height: 200px;
+  width: 600px; /* initial size */
+  height: 400px;
   overflow: hidden;
   cursor: pointer;
 }
