@@ -1,0 +1,66 @@
+.frame {
+  position: relative;
+  width: 300px; /* initial size */
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.frame img.hidden {
+  opacity: 0;
+}
+
+.frame img.scale-up {
+  transform: scale(3);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-5px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(5px, 0);
+  }
+  /* 15%,
+  35%,
+  55%,
+  75%,
+  95% {
+    transform: (translate(0, 5px));
+  }
+  5%,
+  25%,
+  45%,
+  65%,
+  85% {
+    transform: (translate(0, 5px));
+  } */
+}
+
+.frame img.shake {
+  animation: shake 0.5s;
+}
+
+.frame img.scale-down {
+  transform: scale(1);
+}
