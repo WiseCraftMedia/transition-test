@@ -1,0 +1,61 @@
+.alpha-frame {
+  position: relative;
+  width: 600px; /* initial size */
+  height: 450px;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0; /* Default to hidden */
+    z-index: 1;
+
+    &.visible {
+      opacity: 1; /* Make the image visible */
+      z-index: 2;
+    }
+
+    &.scale-up {
+      transform: scale(3);
+    }
+
+    &.scale-down {
+      transform: scale(1);
+    }
+
+    &.shake {
+      animation: shake 0.5s;
+    }
+  }
+
+  /* Ensure the first image is visible on page load */
+  #img1.visible {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-5px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(5px, 0);
+  }
+}

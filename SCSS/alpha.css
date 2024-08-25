@@ -1,11 +1,10 @@
 .frame {
   position: relative;
   width: 600px; /* initial size */
-  height: 400px;
+  height: 600px;
   overflow: hidden;
   cursor: pointer;
 }
-
 .frame img {
   position: absolute;
   top: 0;
@@ -14,53 +13,30 @@
   height: 100%;
   transition: transform 1s ease, opacity 1s ease;
 }
-
-.frame img.hidden {
+.frame img :first-of-type {
+  display: hidden;
+}
+.frame img .hidden {
   opacity: 0;
 }
-
-.frame img.scale-up {
+.frame img .scale-up {
   transform: scale(3);
+}
+.frame img .shake {
+  animation: shake 0.5s;
+}
+.frame img .scale-down {
+  transform: scale(1);
 }
 
 @keyframes shake {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate(0, 0);
   }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
+  10%, 30%, 50%, 70%, 90% {
     transform: translate(-5px, 0);
   }
-  20%,
-  40%,
-  60%,
-  80% {
+  20%, 40%, 60%, 80% {
     transform: translate(5px, 0);
   }
-  /* 15%,
-  35%,
-  55%,
-  75%,
-  95% {
-    transform: (translate(0, 5px));
-  }
-  5%,
-  25%,
-  45%,
-  65%,
-  85% {
-    transform: (translate(0, 5px));
-  } */
-}
-
-.frame img.shake {
-  animation: shake 0.5s;
-}
-
-.frame img.scale-down {
-  transform: scale(1);
-}
+}/*# sourceMappingURL=alpha.css.map */
